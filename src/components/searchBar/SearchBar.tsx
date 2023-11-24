@@ -1,11 +1,7 @@
 import { Button, TextField } from '@mui/material';
-import { SearchBarContainer } from './styles';
 
-interface ISearchBar {
-  searchedWord: string;
-  setSearchedWord: React.Dispatch<React.SetStateAction<string>>;
-  handleSearch: () => void;
-}
+import { ISearchBar } from '../..';
+import { SearchBarContainer } from './styles';
 
 export const SearchBar = ({
   searchedWord,

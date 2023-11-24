@@ -2,11 +2,11 @@ import { Typography } from '@mui/material';
 import { useState } from 'react';
 import { Header, ResultComponent, SearchBar } from './components';
 import { Container } from './styles';
-import { Word } from './types';
+import { IWord } from './types';
 
 function App() {
   const [searchedWord, setSearchedWord] = useState<string>('');
-  const [result, setResult] = useState<Word[] | null>(null);
+  const [result, setResult] = useState<IWord[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   // Run a try/catch on search from API and setting result and error accordingly

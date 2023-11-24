@@ -8,11 +8,14 @@ export const ResultContainer = styled(Box)(() => ({
   alignItems: 'center',
   gap: '10px',
   width: '50%',
-  padding: '20px'
+  padding: '20px',
 }));
 
 export const WordCard = styled(Box)(() => ({
   display: 'flex',
   flex: 1,
-  border: '1px solid #979797'
+  width: '100%',
+  border: '1px solid #979797',
+  padding: '20px',
+  borderRadius: '5px',
 }));
