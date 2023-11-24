@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Typography } from '@mui/material';
+import { useState } from 'react';
+import { Header, ResultComponent, SearchBar } from './components';
+import { Container } from './styles';
+import { Word } from './types';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [searchedWord, setSearchedWord] = useState<string>('');
+  const [result, setResult] = useState<Word[] | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  // Run a try/catch on search from API and setting result and error accordingly
+  const fetchWordData = async (word: string) => {
+    try {
+      const response = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      );
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log(data);
+        setResult(data);
+        setError(null);
+      } else {
+        setError('**Word not found**');
+        setResult(null); // Clear previous results if there was an error
+      }
+    } catch (error) {
+      console.error('Error fetching word:', error);
+      setError('Error fetching word');
+      setResult(null); // Clear previous results if there was an error
+    }
+  };
+
+  // Makes sure the searched word has characters after trimming whitespaces before rendering accordingly
+  const handleSearch = () => {
+    if (searchedWord.trim() === '') {
+      setError('**Please enter a word**');
+      setResult(null); // Clear previous results if there was an error
+    } else {
+      fetchWordData(searchedWord);
+    }
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Container>
+      <Header />
+      <SearchBar
+        searchedWord={searchedWord}
+        setSearchedWord={setSearchedWord}
+        handleSearch={handleSearch}
+      />
+      {error && (
+        <Typography variant="body1" color="red">
+          {error}
+        </Typography>
+      )}
+      <ResultComponent result={result} />
+    </Container>
+  );
 }
 
-export default App
+export default App;

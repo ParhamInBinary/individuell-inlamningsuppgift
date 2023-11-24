@@ -7,11 +7,11 @@ Om du vill resonera kring dina val av tester går det bra att skriva in några e
 
 ## Features
 
-[G] [ ] Användaren kan söka efter ord i ett sökfält
+[G] [x] Användaren kan söka efter ord i ett sökfält
 
 [G] [ ] Användaren kan se svaret från Free Dictionary API i en användarvänlig form.
 
-[G] [ ] Användaren kan se ett error om de söker med ett tomt sökfält.
+[G] [x] Användaren kan se ett error om de söker med ett tomt sökfält.
 
 [G] [ ] Användaren kan spela upp ljudfilen från API:et om den finns tillgänglig.
 
