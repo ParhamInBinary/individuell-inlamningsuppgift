@@ -13,7 +13,7 @@ describe('App', () => {
     // Find searchbar
     const searchBar = screen.getByLabelText(/Search/i);
     expect(searchBar).toBeInTheDocument();
-    expect(searchBar).toHaveValue('')
+    expect(searchBar).toHaveValue('');
 
     // Find and click searchBtn
     const searchBtn = screen.getByRole('button', { name: /Search/i });
