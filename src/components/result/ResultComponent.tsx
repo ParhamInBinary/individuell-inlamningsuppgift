@@ -7,7 +7,7 @@ export const ResultComponent = ({ result }: IResultComponent) => {
   return (
     <ResultContainer>
       {result?.map((word: IWord, index: number) => (
-        <WordCard key={index}>
+        <WordCard key={index} data-testid="resultCard">
           <CardHeader word={word} />
           <CardBody word={word} />
         </WordCard>
