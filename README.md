@@ -22,7 +22,7 @@ Om du vill resonera kring dina val av tester går det bra att skriva in några e
 
 Testning
 
-[ ] [G] Appen innehåller enhetstester och/eller integrationstester som säkerställer att koden huvudsakligen fungerar som den ska.
+[x] [G] Appen innehåller enhetstester och/eller integrationstester som säkerställer att koden huvudsakligen fungerar som den ska.
 
 [ ] [VG] Appen innehåller väl valda enhetstester och/eller integrationstester som säkerställer att koden i hög utsträckning fungerar som den ska.
 
