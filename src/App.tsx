@@ -1,8 +1,8 @@
 import { Typography } from '@mui/material';
 import { useState } from 'react';
-import { Header, ResultComponent, SearchBar } from './components';
+
+import { Header, IWord, ResultComponent, SearchBar } from '.';
 import { Container } from './styles';
-import { IWord } from './types';
 
 function App() {
   const [searchedWord, setSearchedWord] = useState<string>('');
@@ -39,6 +39,7 @@ function App() {
       setResult(null); // Clear previous results if there was an error
     } else {
       fetchWordData(searchedWord);
+      setSearchedWord('');
     }
   };
 

@@ -1,5 +1,6 @@
-import { IResultComponent, IWord } from '../..';
-import { CardHeader } from './components';
+import { IResultComponent } from '.';
+import { IWord } from '../..';
+import { CardBody, CardHeader } from './components';
 import { ResultContainer, WordCard } from './styles';
 
 export const ResultComponent = ({ result }: IResultComponent) => {
@@ -8,6 +9,7 @@ export const ResultComponent = ({ result }: IResultComponent) => {
       {result?.map((word: IWord, index: number) => (
         <WordCard key={index}>
           <CardHeader word={word} />
+          <CardBody word={word} />
         </WordCard>
       ))}
     </ResultContainer>

@@ -13,9 +13,11 @@ export const ResultContainer = styled(Box)(() => ({
 
 export const WordCard = styled(Box)(() => ({
   display: 'flex',
+  flexDirection: 'column',
   flex: 1,
   width: '100%',
   border: '1px solid #979797',
   padding: '20px',
   borderRadius: '5px',
+  boxShadow: '0px 0px 8px #c1c1c1'
 }));

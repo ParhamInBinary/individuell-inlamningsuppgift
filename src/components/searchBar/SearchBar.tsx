@@ -1,7 +1,7 @@
 import { Button, TextField } from '@mui/material';
 
-import { ISearchBar } from '../..';
 import { SearchBarContainer } from './styles';
+import { ISearchBar } from './types';
 
 export const SearchBar = ({
   searchedWord,

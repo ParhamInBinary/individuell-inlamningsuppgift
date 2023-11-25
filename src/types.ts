@@ -4,12 +4,17 @@ export interface IPhonetic {
 }
 
 export interface IMeaning {
-  partOfSpeach: string;
-  definition: IDefenition[];
+  partOfSpeech: string;
+  definitions: IDefenition[];
+  synonyms: string[];
+  antonyms: string[];
 }
 
 export interface IDefenition {
-  text: string;
+  definition: string;
+  example: string;
+  synonyms: string[];
+  antonyms: string[];
 }
 
 export interface IWord {

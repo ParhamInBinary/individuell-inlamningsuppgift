@@ -1,8 +1,7 @@
 import { Box, Typography } from '@mui/material';
-
 import { VolumeUp } from '@mui/icons-material';
-import { IPhonetic } from '../../../..';
-import { ICardHeader } from '../../../../types/CardHeader';
+
+import { ICardHeader, IPhonetic } from '../../../..';
 import { CardHeaderContainer } from './styles';
 
 export const CardHeader = ({ word }: ICardHeader) => {
