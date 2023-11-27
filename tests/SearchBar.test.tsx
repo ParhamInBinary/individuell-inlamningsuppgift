@@ -1,39 +1,25 @@
 import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import React, { useState } from 'react';
+import React from 'react';
 import { describe, expect, it } from 'vitest';
 
-import { SearchBar } from '../src';
-
-const MockSearchBar = () => {
-  const [searchedWord, setSearchedWord] = useState<string>('');
-  const mockHandleSearch = () => {};
-  return (
-    <>
-      <SearchBar
-        searchedWord={searchedWord}
-        setSearchedWord={setSearchedWord}
-        handleSearch={mockHandleSearch}
-      />
-    </>
-  );
-};
+import App from '../src/App';
 
 describe('Searchbar', () => {
   it('should render searchbar', async () => {
-    render(<MockSearchBar />);
+    render(<App />);
     const searchBar = screen.getByLabelText(/Search/i);
     expect(searchBar).toBeInTheDocument();
   });
 
   it('should render searchBtn', () => {
-    render(<MockSearchBar />);
+    render(<App />);
     const searchBtn = screen.getByRole('button', { name: /Search/i });
     expect(searchBtn).toBeInTheDocument();
   });
 
   it('should reset searchbar after searchBtn is clicked', async () => {
-    render(<MockSearchBar />);
+    render(<App />);
     const user = userEvent.setup();
 
     // Find and click searchBtn

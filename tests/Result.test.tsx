@@ -5,9 +5,7 @@ import { describe, expect, it } from 'vitest';
 
 import App from '../src/App';
 
-const mockWord = 'hello';
-
-describe('App', () => {
+describe('Result', () => {
   it('should render result when word is searched', async () => {
     render(<App />);
     const user = userEvent.setup();
@@ -16,9 +14,9 @@ describe('App', () => {
     const searchBar = screen.getByLabelText(/Search/i);
     expect(searchBar).toBeInTheDocument();
     expect(searchBar).toHaveValue('');
-    await user.type(searchBar, mockWord);
+    await user.type(searchBar, 'hello');
     await waitFor(() => {
-      expect(searchBar).toHaveValue(mockWord);
+      expect(searchBar).toHaveValue('hello');
     });
 
     // Find and click searchBtn, reset searchbar
@@ -30,5 +28,17 @@ describe('App', () => {
     // Find result of searched word
     const resultCard = await waitFor(() => screen.findByTestId('resultCard'));
     expect(resultCard).toBeInTheDocument();
+
+    // Find various info of the searched word
+    expect(screen.getByText('hello')).toBeInTheDocument();
+    // expect(screen.getByText(/hə'ləʊ/i)).toBeInTheDocument();
+    expect(screen.getByTestId('TextToSpeech')).toBeInTheDocument();
+    expect(screen.getByText('noun')).toBeInTheDocument();
+    expect(screen.getByText('greeting')).toBeInTheDocument();
+    expect(screen.getByText(/bye/i)).toBeInTheDocument();
+    expect(
+      screen.getByText(/"Hello!" or an equivalent greeting./i)
+    ).toBeInTheDocument();
+    expect(screen.getByText(/How may I help you/i)).toBeInTheDocument();
   });
 });
