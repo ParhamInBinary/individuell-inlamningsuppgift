@@ -14,7 +14,7 @@ export const CardHeader = ({ word }: ICardHeader) => {
         <Box key={index}>
           {example.text && (
             <>
-              <Typography variant="body1">{`[${example.text}]`}</Typography>
+              <Typography variant="body1" data-testid="phonetic">{`[${example.text}]`}</Typography>
               {example.audio && (
                 <VolumeUp data-testid="TextToSpeech" onClick={() => new Audio(example.audio).play()} />
               )}

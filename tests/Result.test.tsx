@@ -31,7 +31,7 @@ describe('Result', () => {
 
     // Find various info of the searched word
     expect(screen.getByText('hello')).toBeInTheDocument();
-    // expect(screen.getByText(/hə'ləʊ/i)).toBeInTheDocument();
+    expect(screen.getAllByTestId('phonetic')).toHaveLength(2);
     expect(screen.getByTestId('TextToSpeech')).toBeInTheDocument();
     expect(screen.getByText('noun')).toBeInTheDocument();
     expect(screen.getByText('greeting')).toBeInTheDocument();
