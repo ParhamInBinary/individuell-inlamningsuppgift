@@ -8,6 +8,11 @@ import {
 } from '.';
 import { IDefenition, IMeaning } from '../../../..';
 
+/**
+ *
+ * This component returns some of the information of the 
+ * fetched data mapped out for each category.
+ */
 export const CardBody = ({ word }: ICardBody) => {
   return (
     <CardBodyContainer>

@@ -3,6 +3,12 @@ import { Button, TextField } from '@mui/material';
 import { SearchBarContainer } from './styles';
 import { ISearchBar } from './types';
 
+/**
+ *
+ * This component returns a textfield for the user to type in
+ * and a button to confirm and fetch the information 
+ * about the searched word.
+ */
 export const SearchBar = ({
   searchedWord,
   setSearchedWord,

@@ -4,6 +4,12 @@ import { useState } from 'react';
 import { Header, IWord, ResultComponent, SearchBar } from '.';
 import { Container } from './styles';
 
+/**
+ *
+ * Main App component containing the fetch data function
+ * as well as the search function
+ * and rendering out the components of the app.
+ */
 function App() {
   const [searchedWord, setSearchedWord] = useState<string>('');
   const [result, setResult] = useState<IWord[] | null>(null);

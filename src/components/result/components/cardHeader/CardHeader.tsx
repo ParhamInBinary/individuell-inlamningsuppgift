@@ -4,6 +4,12 @@ import { VolumeUp } from '@mui/icons-material';
 import { ICardHeader, IPhonetic } from '../../../..';
 import { CardHeaderContainer } from './styles';
 
+
+/**
+ *
+ * This component returns some of the information of the 
+ * fetched data mapping out phonetics examples and the word searched for.
+ */
 export const CardHeader = ({ word }: ICardHeader) => {
   return (
     <CardHeaderContainer>

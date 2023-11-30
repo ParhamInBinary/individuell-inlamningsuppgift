@@ -3,6 +3,10 @@ import { IWord } from '../..';
 import { CardBody, CardHeader } from './components';
 import { ResultContainer, WordCard } from './styles';
 
+/**
+ *
+ * This component maps out each result of the fetched data.
+ */
 export const ResultComponent = ({ result }: IResultComponent) => {
   return (
     <ResultContainer>
